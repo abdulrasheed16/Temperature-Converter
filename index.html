@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+
+<style>
+
+html{
+    background: rgb(231, 206, 198);
+}
+
+    .container{
+        width: 100%;
+        height: 150vh;
+        /* border: 3px solid red; */
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+
+        
+        
+    }
+
+    .box1{
+        height: 120px;
+        width: 320px;
+        border: 2px solid black;
+        margin: 13px;
+        text-align: center;
+        background: #ffc47b91;
+        border-radius:3px ;
+  
+    }
+
+    .heading{
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+    }
+    
+    .case1{
+        text-align: center;
+    }
+   
+    input{
+        height: 1.3rem;
+        border-radius: .2rem;
+        border: 1px solid black;
+    }
+
+    input:focus{
+        border: 2px solid rgb(0, 0, 0);
+    }
+
+
+@media (max-width: 500px)
+{
+  .heading{
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+</style>
+
+
+</head>
+<body>
+    
+<div class="container">
+    <div class="heading">Temperature Converter</div>
+
+    <div class="box1">
+<h3>Fahrenheit to Kelvin</h3>
+
+<p class="case1">
+    <label>Fahrenheit</label>
+    <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+  </p>
+  <p>Kelvin: <span id="outputKelvin"></span></p>
+
+
+</div>
+
+
+
+<div class="box1">
+    <h3>Fahrenheit to Celsius</h3>
+    <p class="case1">
+        <label>Fahrenheit</label>
+        <input id="inputf" type="number" placeholder="Fahrenheit" oninput="tconvertor(this.value)" onchange="tconvertor(this.value)">
+      </p>
+      <p>Celcius: <span id="outputCelcius"></span></p>
+        
+
+    </div>
+
+
+
+
+<div class="box1">
+    <h3>Kelvin to Fahrenheit</h3>
+    <p class="case1">
+        <label>Kelvin</label>
+        <input id="inputKelvin" type="number" placeholder="Kelvin" oninput="tempConverter(this.value)" onchange="tempConverter(this.value)">
+      </p>
+      <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+      
+      
+
+</div>
+
+
+
+<div class="box1">
+    <h3>Celsius to Fahrenheit</h3>
+    <p>
+        <label>Celsius</label>
+        <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatConvertor(this.value)" onchange="temperatConvertor(this.value)">
+      </p>
+      <p>Fahrenheit: <span id="outputFah"></span></p>
+      
+</div>
+
+
+
+
+
+
+    <div class="box1">
+        <h3>Celsius to Kelvin</h3>
+
+        <p>
+            <label>Celsius</label>
+            <input id="inC" type="number" placeholder="Celsius" oninput="TC(this.value)" onchange="TC(this.value)">
+          </p>
+          <p>Kelvin: <span id="outk"></span></p>
+
+        </div>
+
+        <div class="box1">
+
+            <h3>Kelvin to Celsius</h3>
+            <p class="case1">
+                <label>Kelvin</label>
+                <input id="inpKel" type="number" placeholder="Kelvin" oninput="temCon(this.value)" onchange="temCon(this.value)">
+              </p>
+              <p>Celcius: <span id="otc"></span></p>
+            </div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- javaScript code starts -->
+
+<script>
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputKelvin").innerHTML=((valNum-32)/1.8)+273.15;
+}
+
+
+function tempConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputFahrenheit").innerHTML=((valNum-273.15)*1.8)+32;
+}
+
+
+function temperatConvertor(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputFah").innerHTML=(valNum*1.8)+32;
+}
+
+
+function tconvertor(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+}
+
+function TC(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outk").innerHTML=valNum+273.15;
+}
+
+function temCon(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("otc").innerHTML=valNum-273.15;
+}
+
+</script>
+
+
+<!-- javaScript CODE END -->
+    
+
+
+</body>
+</html>
